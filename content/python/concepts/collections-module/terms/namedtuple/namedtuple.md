@@ -67,7 +67,7 @@ from collections import namedtuple
 
 numbers = [0, 1, 2]
 myNamedTuple = namedtuple('myNamedTuple', ['a', 'b', 'c'], defaults=[0, 2, 4])
-myNamedTuple_numbers = myNamedTuple._make(numbers)
+myNamedTuple_numbers = myNamedTuple(numbers[0], numbers[1], numbers[2])
 
 print(myNamedTuple_numbers._fields)
 print("---")
