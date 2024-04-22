@@ -66,8 +66,8 @@ The following example creates a `namedtuple` instance from an iterable, then cha
 from collections import namedtuple
 
 numbers = [0, 1, 2]
-myNamedTuple = namedtuple('myNamedTuple', ['a', 'b', 'c'], defaults=[0, 2, 4])
-myNamedTuple_numbers = myNamedTuple._make(numbers)
+myNamedTuple = namedtuple('myNamedTuple', ['a', 'b', 'c'], defaults=[0, 2])
+myNamedTuple_numbers = myNamedTuple._make(numbers + [3])
 
 print(myNamedTuple_numbers._fields)
 print("---")
