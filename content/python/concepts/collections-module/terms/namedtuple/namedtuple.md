@@ -62,20 +62,13 @@ Student 2: Username: Bar | Courses involvement: ['Javascript', 'Web Development'
 
 The following example creates a `namedtuple` instance from an iterable, then changes one of its assigned values, and returns a [`dict`](https://www.codecademy.com/resources/docs/python/dictionaries) with the default preset values.
 
-```codebyte/python
+
 from collections import namedtuple
 
-numbers = [0, 1, 2]
-myNamedTuple = namedtuple('myNamedTuple', ['a', 'b', 'c'], defaults=[0, 2, 4])
-myNamedTuple_numbers = myNamedTuple._make(numbers)
-
-print(myNamedTuple_numbers._fields)
-print("---")
-print(myNamedTuple_numbers)
-print(myNamedTuple_numbers.c)
-print(myNamedTuple_numbers._asdict())
-print("---")
-print(myNamedTuple_numbers._replace(c=3))
-print("---")
-print(myNamedTuple._field_defaults)
-```
+myNamedTuple = namedtuple('myNamedTuple', ['a', 'b', 'c'])
+myNamedTuple.__new__.__defaults__ = (0, 1, 2)
+nt = myNamedTuple()
+print(nt)
+print(nt._asdict())
+nt2 = myNamedTuple(a=0, b=1, c=3)
+print(nt2._asdict())
